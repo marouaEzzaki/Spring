@@ -1,0 +1,24 @@
+package main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import modelo.entidad.Pelicula;
+
+public class Main03 {
+
+	public static ApplicationContext context;
+	
+	public static void main(String[] args) {
+	
+		context = new ClassPathXmlApplicationContext("context03.xml");
+		
+		//te crea el objeto director tambie, porq esta linkada 
+		Pelicula p = context.getBean("pelicula", Pelicula.class);
+		
+		
+		
+		
+		
+	}
+}

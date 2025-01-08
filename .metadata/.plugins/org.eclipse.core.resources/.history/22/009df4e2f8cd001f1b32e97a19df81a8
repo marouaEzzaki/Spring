@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="acerRam" class="modelo.entidad.Ram">
+		<property name="manufacturer" value="Acer"></property>
+		<property name="size" value="2"></property>
+		<property name="price" value="160"></property>
+	
+	</bean>
+	
+	
+	<bean id="forgeonRam" class="modelo.entidad.Ram">
+		<property name="manufacturer" value="Forgeon"></property>
+		<property name="size" value="2"></property>
+		<property name="price" value="130"></property>
+	
+	</bean>
+	
+	<bean id="graphicCard" class="modelo.entidad.GraphicCard">
+		<property name="manufacturer" value="Asus"></property>
+		<property name="model" value="GeForce RTX 4060"></property>
+		<property name="CUDACores" value="4"></property>
+		<property name="price" value="199"></property>
+		<property name="ram" ref="ram"></property>
+	</bean>
+	
+	<bean id="motherBoard" class="modelo.entidad.MotherBoard">
+		<property name="manufacturer" value="Asus"></property>
+		<property name="price" value="257.27"></property>
+		<property name="formFactor" value="PRIME B760M-K"></property>
+		
+	</bean>
+	
+	<bean id="mouse" class="modelo.entidad.Peripheral">
+		<property name="type" value="Mouse"></property>
+		<property name="manufacturer" value="Logitech "></property>
+		<property name="price" value="95.23"></property>
+		
+	</bean>
+	
+	<bean id="keyboard" class="modelo.entidad.Peripheral">
+		<property name="type" value="Keyboard"></property>
+		<property name="manufacturer" value="Razer"></property>
+		<property name="price" value="69.99"></property>
+		
+	</bean>
+	
+	<bean id="cpu" class="modelo.entidad.Cpu">
+		<property name="manufacturer" value="Intel "></property>
+		<property name="model" value="i9-14900K"></property>
+		<property name="numberOfCores" value="16"></property>
+		<property name="price" value="539"></property>
+		
+	</bean>
+	
+	
+	<bean id="ramList" class="java.util.ArrayList">
+	
+		<constructor-arg>
+			<list value-type="modelo.entidad.Ram">
+				<ref bean="acerRam"></ref>
+				<ref bean="forgeonRam"></ref>
+			
+			</list>
+		
+		</constructor-arg>
+	
+	
+	</bean> 
+	
+	<bean id="peripheralList" class="java.util.ArrayList">
+	
+		<constructor-arg>
+			<list value-type="modelo.entidad.Peripheral">
+				<ref bean="mouse"></ref>
+				<ref bean="keyboard"></ref>
+			
+			</list>
+		
+		</constructor-arg>
+	
+	
+	</bean> 
+	
+	
+	<bean id="ordenador" class="modelo.entidad.Computer">
+		<property name="price" value="600"></property>
+		<property name="cpu" ref="cpu"></property>
+		<property name="graphicCard" ref="graphicCard"></property>
+		<property name="motherBoard" ref="motherBoard"></property>
+		<property name="graphicCard" ref="graphicCard"></property>
+		<property name="ramList" ref="ramList"></property>
+		<property name="peripheralList" ref="peripheralList"></property>
+		
+	</bean>
+	
+</beans>

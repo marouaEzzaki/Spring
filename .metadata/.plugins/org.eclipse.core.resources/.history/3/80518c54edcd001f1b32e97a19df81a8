@@ -1,0 +1,23 @@
+package main;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import jdk.jshell.execution.Util;
+
+public class Main04 {
+
+	public static ApplicationContext context;
+	
+	public static void main(String[] args) {
+	
+		context = new ClassPathXmlApplicationContext("context04.xml");
+		
+		List<String> listaNombres =  context.getBean("listaNombres", List.class);
+		
+		
+		
+	}
+}
