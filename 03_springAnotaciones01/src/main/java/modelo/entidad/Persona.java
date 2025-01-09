@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 //Para poder trabajar con objetos en Spring tienen que llevar la notacion
 //JavaBean
 
-@Component
+@Component("personaBean")//si queremos cambiar e id del bean lo podemos poner entre parentesis
 /**
  * La anotacion @Component da de alta un objeto 
  * en el contexto de spring de la clase donde este
  * y como id el nombre de la clase en lowerCamelCase
  * Es decir, esto seria equivalente a : 
- * <bean id="persona" class="modelo.entidad.Persona" scope="singleton">
+ * <bean id="personaBean" class="modelo.entidad.Persona" scope="singleton">
  * 
  * Ahora bien si queremos cambiar el scope del bean lo haremos con
  * la anotacion @Scope("prototype")

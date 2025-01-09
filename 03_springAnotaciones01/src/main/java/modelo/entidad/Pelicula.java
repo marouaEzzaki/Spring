@@ -1,8 +1,21 @@
 package modelo.entidad;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
+
 public class Pelicula {
 	private String titulo;
+	//Con Autowired buscamos un objeto del tipo de esta propiedad y
+	//si lo encuentra lo inyecta(ID)
+	@Autowired
 	private Director director;
+	@Autowired
+	@Qualifier("personaBean") //<-- inyectar un bean por ID
 	private Persona productor;
 	
 	
@@ -28,7 +41,5 @@ public class Pelicula {
 	@Override
 	public String toString() {
 		return "Pelicula [titulo=" + titulo + ", director=" + director + ", productor=" + productor + "]";
-	}
-	
-	
+	}	
 }
