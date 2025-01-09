@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- 
+	La manera mas habitual de hacer ID (inyecciones de dependencias) en spring
+	es mediante el concepto de "autowired"
+	
+	Si configuramos un bean con la propieedad "autowired" buscará automáticamente
+	todas sus dependencias de objetos en el contexto de Spring y se las inyectará
+	automáticamante.
+	
+	
+	 -->
+	
+	<bean id="director" class="modelo.entidad.Director">
+		
+		<property name="nombre" value="James Cameron"></property>
+	
+	</bean>
+	
+	
+	<!-- añadimos otro bean para probar si inyecta tambn este obj -->
+	<bean id="productor" class="modelo.entidad.Persona">
+		
+		<property name="nombre" value="Macias"></property>
+	
+	</bean>
+	
+	
+	<!-- dentro de este bean va a buscar algun objeto de tipo director en e contexto 
+	de spring y si se lo encuentra se lo va a inyectar
+	es lo mismo que hacer un ref, pero lo simplifica mas con autowire
+	si alguno no lo encuentra es nulo y ya está(depende como lo tengas configurado) 
+	byType -> busca un objeto de tipo director-->
+	<bean id="pelicula" class="modelo.entidad.Pelicula" autowire="byType">
+		<property name="titulo" value=""></property>
+	</bean>
+	
+</beans>
