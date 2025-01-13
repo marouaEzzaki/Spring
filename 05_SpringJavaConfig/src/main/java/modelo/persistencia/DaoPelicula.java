@@ -7,20 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import modelo.entidades.Pelicula;
 
-//En este caso estoy simulando una persistencia, realmente lo que tenemos
-//es un array en memoria que guarda las peliculas
-//Tambien para darle un poco más de complejidad establecemos un numero 
-//maximo de peliculas que podemos tener guardadas
-
-//De @Component extienden 3 tipos de anotaciones
-//1- @Repository (dao)
-//2- @Service (gestora)
-//3- @Controller (controlador)
-
-//Estas tres anotaciones hacen lo mismo que @Component pero dan informacion 
-//al que las lee
-//es puramente semantica le da iformacion al programador
-@Repository
 public class DaoPelicula {
 	private List<Pelicula> listaPelicula = new ArrayList<Pelicula>();
 	private int numeroMaximoPeliculas;
