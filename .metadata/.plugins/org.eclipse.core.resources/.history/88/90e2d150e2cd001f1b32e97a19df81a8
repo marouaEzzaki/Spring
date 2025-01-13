@@ -1,7 +1,0 @@
-package modelo.entidad;
-
-public class Pelicula {
-	private String titulo;
-	private Director director;
-
-}
