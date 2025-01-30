@@ -31,9 +31,3 @@ Para ejecutar estos ejemplos, necesitas tener instalados los siguientes programa
 - **Java JDK 11 o superior**
 - **Maven** o **Gradle** (dependiendo de la herramienta que uses para gestionar dependencias)
 - **Spring Framework 5.x o superior**
-
-## Instrucciones de Uso
-
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/spring-framework-aprendizaje.git
